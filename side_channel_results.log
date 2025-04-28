@@ -1,0 +1,27 @@
+Testing for side-channel vulnerability...
+Collecting timing data for 50 samples...
+Collected 10/50 samples
+Collected 20/50 samples
+Collected 30/50 samples
+Collected 40/50 samples
+Collected 50/50 samples
+
+Timing Analysis:
+Number of samples: 50
+
+Average time by bit count:
+Bit count 10: 0.011237 seconds
+Bit count 11: 0.011995 seconds
+Bit count 12: 0.013208 seconds
+Bit count 13: 0.014628 seconds
+Bit count 14: 0.015344 seconds
+Bit count 15: 0.016813 seconds
+Bit count 16: 0.017783 seconds
+Bit count 17: 0.019044 seconds
+Bit count 18: 0.020263 seconds
+Bit count 19: 0.021233 seconds
+Bit count 21: 0.023575 seconds
+Bit count 22: 0.024179 seconds
+Bit count 25: 0.027617 seconds
+
+No clear correlation between bit count and execution time.

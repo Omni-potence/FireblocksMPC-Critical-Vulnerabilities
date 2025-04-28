@@ -1,0 +1,41 @@
+Testing for protocol abort vulnerabilities...
+
+=== Testing normal protocol execution ===
+Protocol started with message hash: c0719e9a8d5d838d861dc6f675c899d2b309a3a65bb9fe6b11e5afcbf9a2c0b1
+Phase 1 completed
+Phase 2 completed
+Protocol finalized with result: 7791
+Normal execution result: 7791
+
+=== Testing abort after phase 1 ===
+Protocol started with message hash: c0719e9a8d5d838d861dc6f675c899d2b309a3a65bb9fe6b11e5afcbf9a2c0b1
+Phase 1 completed
+Protocol aborted from state: PHASE1_COMPLETED
+Partial results obtained from abort:
+  nonce: 152067050
+  phase1_result: 88182084222371550
+
+VULNERABILITY DETECTED: Nonce leaked through protocol abort!
+VULNERABILITY DETECTED: Phase 1 intermediate result leaked through protocol abort!
+
+=== Testing abort after phase 2 ===
+Protocol started with message hash: c0719e9a8d5d838d861dc6f675c899d2b309a3a65bb9fe6b11e5afcbf9a2c0b1
+Phase 1 completed
+Phase 2 completed
+Protocol aborted from state: PHASE2_COMPLETED
+Partial results obtained from abort:
+  nonce: 4023226356
+  phase1_result: 4403910197387497392
+  phase2_result: 4403910194173645098
+
+VULNERABILITY DETECTED: Nonce leaked through protocol abort!
+VULNERABILITY DETECTED: Phase 1 intermediate result leaked through protocol abort!
+VULNERABILITY DETECTED: Phase 2 intermediate result leaked through protocol abort!
+
+=== Summary ===
+Normal execution completed successfully.
+
+Vulnerabilities detected:
+- Nonce leakage through protocol abort
+- Phase 1 intermediate result leakage
+- Phase 2 intermediate result leakage
